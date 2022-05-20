@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Edit_Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BookManage.Models.Books
+
+<h2>Edit_Book</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "Book", FormMethod.Post))
+    {
+        <table class="table table-bordered ">
+            
+            <tr>
+                <td>Title</td>
+                <td>
+                    <input type="text" name="title" value="@Model.title" />
+                    <input type="hidden" name="id" value="@Model.id" />
+                </td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>
+                    <input type="text" name="author" value="@Model.author" />
+                </td>
+            </tr>
+            <tr>
+                <td>PublishedDate</td>
+                <td>
+                    <input type="text" name="publishDate" value="@Model.publishDate" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Update" class="btn btn-primary " />
+                </td>
+            </tr>
+        </table>
+    }
+
+
+</body>
+</html>
+

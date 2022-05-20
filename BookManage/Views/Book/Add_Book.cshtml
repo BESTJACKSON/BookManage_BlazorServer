@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Add Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Book</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "Book", FormMethod.Post))
+    {
+        <table class="table table-bordered ">
+            <tr>
+                <td>Title</td>
+                <td>
+                    <input type="text" name="title" />
+                </td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>
+                    <input type="text" name="author" />
+                </td>
+            </tr>
+            <tr>
+                <td>PublishedDate</td>
+                <td>
+                    <input type="datetime-local" name="publishDate" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Add" class="btn btn-primary " />
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
+

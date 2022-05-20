@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<BookManage.Models.Books>
+@using BookManage.Models
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    @Html.ActionLink("Add Book", "Add_Book", "Book", new { @class = "btn btn-danger", style = " margin-top:20px" })
+    <table class="table table-bordered">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>publishedDate</th>
+            <th>Operation</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.title</td>
+                <td>@item.author</td>
+                <td>@item.publishDate.ToString()</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit_Book", "Book", new { id = item.id }, null)
+                    @Html.ActionLink("Delete", "Delete_Book", "Book", new { id = item.id }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
+
